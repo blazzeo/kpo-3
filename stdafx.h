@@ -11,3 +11,4 @@ bool leap(int year);
 int numOfDay(int day, int month, bool leap);
 int errorcatch(int day, int month, int year);
 void numtodate(int num);
+void timedifference();

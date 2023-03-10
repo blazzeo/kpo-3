@@ -4,12 +4,9 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
     setlocale(LC_ALL, "Russian");
-    int iDay;
-    int iMonth;
-    int iYear;
+    int iDay, iMonth, iYear;
     int fullYear = 365;
     char input[9];
-    int date;
     string listOfMonth[12] = {"January","February","March","April","May","June","July","August","September","October","November","December"};
 
     cin >> input;
@@ -22,8 +19,7 @@ int main(int argc, char* argv[]) {
     // year
     if (leap(iYear)) {
         cout << "Год високосный" << endl;
-    }
-    else cout << "Год не високосный" << endl;
+    } else cout << "Год не високосный" << endl;
 
     // name of month
     cout << "Месяц: " << listOfMonth[iMonth-1] << endl;
@@ -33,9 +29,7 @@ int main(int argc, char* argv[]) {
     cout << "Порядковый номер: " << number << endl;
 
     // birthday
-    int birthDay;
-    int birthMonth;
-    int birthYear;
+    int birthDay, birthMonth, birthYear;
 
     // input birth date
     cout << "Введите дату рождения: ";
@@ -48,7 +42,7 @@ int main(int argc, char* argv[]) {
 
     int myBirthday = numOfDay(birthDay, birthMonth, leap(birthYear));
 
-    int nearestBirthday = 0;
+    int nearestBirthday;
     if (myBirthday >= number) {
         nearestBirthday = myBirthday - number;
     }
@@ -56,10 +50,15 @@ int main(int argc, char* argv[]) {
 
     cout << "Ближайший др через: " << nearestBirthday << " дней" << endl;
 
-    // numberofday to date
-    cin >> date;
+    // number to date
+    int date;
 
+    cin >> date;
+    
     numtodate(date);
+
+    // difference between two days
+    timedifference();
 
     system("pause");
     return 0;
